@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: server
+
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:5432/postgres
+    username: ${POSTGRES_USER:user}
+    password: ${POSTGRES_PASSWORD:123456}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+
+application:
+  service:
+    open-weather-app:
+      url: https://api.openweathermap.org
+      apiKey: 098e4a423685443a16470f2410dc74ec
